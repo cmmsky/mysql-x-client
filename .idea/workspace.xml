@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4ec7bdd-819b-42a8-868d-243280296632" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../data-push-soa/data-push-service/src/main/java/com/dfire/datacenter/data/push/DataPushApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/data-scheduler-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/data-scheduler-service/src/main/java/com/dfire/datacenter/data/scheduler/DataSchedulerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/data-scheduler-service/src/main/resources/application-log.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/data-scheduler-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/data-scheduler-service/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/api/XJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/configuration/JobConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/configuration/ZookeeperConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/exception/JobSystemException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/exception/RegException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/exception/RegExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/executor/XJobExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/listener/ListenerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/schedule/JobRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/schedule/JobScheduleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/schedule/LiteJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/schedule/XScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/internal/storage/JobNodePath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/plugin/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/plugin/quartz/JobShutdownHookPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/registry/CoordinatorRegistryCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/registry/RegistryCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-scheduler-soa/quartz-x/src/main/java/com/dfire/datacenter/quartz/x/registry/zookeeper/ZookeeperRegistryCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../easy-analyse/easy-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../easy-analyse/easy-api/src/main/java/com/dfire/datacenter/easy/api/EasyAnalyseApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kafka-conn/src/main/java/cmmsky/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/ChecksumType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/MainBootstrap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/MysqlConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/MysqlQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/ResultSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/exception/ErrorPacketException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/exception/UnknownPacketException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/factory/EventDataFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/AuthPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/BinaryPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/BinlogDumpCommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/BinlogResponsePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/CommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/EOFPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/ErrorPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/FieldPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/HandshakePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/HeaderPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/MySQLPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/OkPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/ResultSetHeaderPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/ResultSetPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/RowDataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/AbstractRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/ColumnType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/DeleteRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/EventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/EventHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/EventHeaderV4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/FormatDescEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/GtidEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/IntVarEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/LoadEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/QueryEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/RotateEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/RowsQueryEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/StartEventV3Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/StopEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/TableMapEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/UpdateRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/WriteRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/packet/binlog/XidEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/ByteUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/Capabilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/DecodeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/DecoderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/MSC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/MySQLMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/SecurityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/StreamUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/ChecksumType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/DecoderFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/DeleteRowsEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/EventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/FormatDescEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/GtidEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/HeartBeatEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/IntVarEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/QueryEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/RotateEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/RowsQueryEventDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/StartEventV3DataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/TableMapEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/UpdateRowsEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/WriteRowsEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/codec/XidEventDataDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/config/DumpConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/AbstractRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/ColumnType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/DeleteRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/EventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/EventHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/EventHeaderV4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/FormatDescEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/GtidEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/HeartBeatEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/IntVarEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/LoadEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/QueryEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/RotateEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/RowsQueryEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/StartEventV3Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/StopEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/TableMapEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/UpdateRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/WriteRowsEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/XidEventData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/util/EventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/test/java/com/cmmsky/mysql/x/client/binlog/TestBinlogDumpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/MySQLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/MySQLDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/TestMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/VERSION.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/executor/MysqlExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/executor/MysqlQueryExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/executor/MysqlUpdateExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/BinaryPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/EOFPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/ErrorPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/FieldPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/HandshakePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/MySQLMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/MySQLPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/OkPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/ResultSetHeaderPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/ResultSetPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/RowDataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/request/Auth323Packet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/request/AuthPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/request/BinlogDumpCommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/request/CommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/socket/BioSocketChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/socket/BioSocketChannelPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/socket/SocketChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/socket/SocketChannelPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/ByteUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/Capabilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/DecodeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/ErrorPacketException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/MSC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/SecurityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/StreamUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/UnknownPacketException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quartz-x/quartz-x-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quartz-x/quartz-x-core/src/main/java/com/dfire/datacenter/quartz/x/core/handler/sharding/AbstractJobShardingStrategy.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/maven/apache-maven-3.6.1" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qvQHV8uDOsbNH2ZyO3kHAuYiLT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cmmsky.mysql.x.client.remoting.utils" />
+      <recent name="com.cmmsky.mysql.x.client.binlog" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\project_new\mysql-x-client\binlog\src\main\java\com\cmmsky\mysql\x\client\binlog\packet" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TestBinlogDumpServer">
+    <configuration name="TestBinlogDumpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cmmsky.mysql.x.client.binlog.TestBinlogDumpServer" />
+      <module name="binlog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cmmsky.mysql.x.client.binlog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cmmsky.mysql.x.client.core.TestMain" />
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cmmsky.mysql.x.client.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="fixLineNumbers" value="false" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestBinlogDumpServer" />
+        <item itemvalue="Application.TestMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4ec7bdd-819b-42a8-868d-243280296632" name="Default Changelist" comment="" />
+      <created>1617957495293</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617957495293</updated>
+      <workItem from="1617957499995" duration="55571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1155" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1618305402318">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1155" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305402318" />
+    <state width="1877" height="403" key="GridCell.Tab.0.bottom" timestamp="1618382407588">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="403" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618382407588" />
+    <state width="1877" height="403" key="GridCell.Tab.0.center" timestamp="1618382407588">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="403" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618382407588" />
+    <state width="1877" height="403" key="GridCell.Tab.0.left" timestamp="1618382407587">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="403" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618382407587" />
+    <state width="1877" height="403" key="GridCell.Tab.0.right" timestamp="1618382407588">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="403" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618382407588" />
+    <state width="1877" height="82" key="GridCell.Tab.1.bottom" timestamp="1618305343444">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="82" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
+    <state width="1877" height="82" key="GridCell.Tab.1.center" timestamp="1618305343444">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="82" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
+    <state width="1877" height="82" key="GridCell.Tab.1.left" timestamp="1618305343444">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="82" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
+    <state width="1877" height="82" key="GridCell.Tab.1.right" timestamp="1618305343444">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="82" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
+    <state x="-1273" y="295" width="627" height="490" key="find.popup" timestamp="1618384210600">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1273" y="295" width="627" height="490" key="find.popup/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618384210600" />
+    <state x="-1586" y="244" key="new project wizard" timestamp="1618219268096">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1586" y="244" key="new project wizard/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618219268096" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/TestMain.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/test/java/com/cmmsky/mysql/x/client/binlog/TestBinlogDumpServer.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
