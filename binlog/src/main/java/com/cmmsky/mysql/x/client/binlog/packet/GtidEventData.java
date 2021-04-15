@@ -42,4 +42,20 @@ public class GtidEventData implements EventData {
                 ", flags=" + flags +
                 '}';
     }
+
+    public String getGtid() {
+        return gtid;
+    }
+
+    public void setGtid(String gtid) {
+        this.gtid = gtid;
+    }
+
+    public byte getFlags() {
+        return flags;
+    }
+
+    public void setFlags(byte flags) {
+        this.flags = flags;
+    }
 }

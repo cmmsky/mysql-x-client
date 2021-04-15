@@ -17,9 +17,9 @@ import java.util.*;
  */
 public class UpdateRowsEventData extends AbstractRowsEventData implements EventData {
 
-    public long tableId;
-    public BitSet includedColumnBeforeUpdate;
-    public BitSet includedColumns;
+    private long tableId;
+    private BitSet includedColumnBeforeUpdate;
+    private BitSet includedColumns;
 
     private List<Map.Entry<Object[], Object[]>> rows;
 
@@ -52,4 +52,35 @@ public class UpdateRowsEventData extends AbstractRowsEventData implements EventD
         return rows;
     }
 
+    public long getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(long tableId) {
+        this.tableId = tableId;
+    }
+
+    public BitSet getIncludedColumnBeforeUpdate() {
+        return includedColumnBeforeUpdate;
+    }
+
+    public void setIncludedColumnBeforeUpdate(BitSet includedColumnBeforeUpdate) {
+        this.includedColumnBeforeUpdate = includedColumnBeforeUpdate;
+    }
+
+    public BitSet getIncludedColumns() {
+        return includedColumns;
+    }
+
+    public void setIncludedColumns(BitSet includedColumns) {
+        this.includedColumns = includedColumns;
+    }
+
+    public List<Map.Entry<Object[], Object[]>> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<Map.Entry<Object[], Object[]>> rows) {
+        this.rows = rows;
+    }
 }

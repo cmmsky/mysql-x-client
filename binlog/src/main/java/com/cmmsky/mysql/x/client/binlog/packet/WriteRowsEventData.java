@@ -19,9 +19,9 @@ import java.util.List;
  */
 public class WriteRowsEventData extends AbstractRowsEventData implements EventData {
 
-    public long tableId;
-    public BitSet includedColumns;
-    public List<Object[]> rows;
+    private long tableId;
+    private BitSet includedColumns;
+    private List<Object[]> rows;
 
     @Override
     public void read(byte[] data) {
@@ -55,5 +55,29 @@ public class WriteRowsEventData extends AbstractRowsEventData implements EventDa
                 ", includedColumns=" + includedColumns +
                 ", rows=" + rows +
                 '}';
+    }
+
+    public long getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(long tableId) {
+        this.tableId = tableId;
+    }
+
+    public BitSet getIncludedColumns() {
+        return includedColumns;
+    }
+
+    public void setIncludedColumns(BitSet includedColumns) {
+        this.includedColumns = includedColumns;
+    }
+
+    public List<Object[]> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<Object[]> rows) {
+        this.rows = rows;
     }
 }

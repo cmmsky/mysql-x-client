@@ -10,7 +10,7 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class XidEventData implements EventData {
 
-    public long xid;
+    private long xid;
 
     @Override
     public void read(byte[] data) {
@@ -23,5 +23,13 @@ public class XidEventData implements EventData {
         return "XidEventData{" +
                 "xid=" + xid +
                 '}';
+    }
+
+    public long getXid() {
+        return xid;
+    }
+
+    public void setXid(long xid) {
+        this.xid = xid;
     }
 }

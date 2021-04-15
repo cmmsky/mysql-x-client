@@ -156,6 +156,10 @@ public class StreamUtil {
         out.write(src);
     }
 
+    public static final void writeBytes(SocketChannel channel, byte[] src) throws IOException {
+        channel.write(src);
+    }
+
 
 
 }

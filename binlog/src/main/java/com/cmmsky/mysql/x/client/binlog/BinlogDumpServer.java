@@ -1,6 +1,9 @@
 package com.cmmsky.mysql.x.client.binlog;
 
 import com.cmmsky.mysql.x.client.binlog.packet.Event;
+import com.cmmsky.mysql.x.client.binlog.packet.EventHeader;
+import com.cmmsky.mysql.x.client.binlog.packet.EventHeaderV4;
+import com.cmmsky.mysql.x.client.core.protocol.packets.request.GtidSet;
 import com.cmmsky.mysql.x.client.core.MySQLDataSource;
 import com.cmmsky.mysql.x.client.core.executor.MysqlQueryExecutor;
 import com.cmmsky.mysql.x.client.core.executor.MysqlUpdateExecutor;
@@ -9,6 +12,8 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.request.BinlogDumpCommand
 import com.cmmsky.mysql.x.client.core.utils.ErrorPacketException;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -25,10 +30,15 @@ public class BinlogDumpServer extends Thread {
     private MySQLDataSource dataSource;
     private BinlogDumpContext context;
     private int checksumLength;
+    private TimerTask heartBeatTimerTask;
+    private Timer timer;
+    private long lastHeartBeat = 0;
+    private LogPosition logPosition;
 
     private boolean startAsc = false;
 
     public static final int       MASTER_HEARTBEAT_PERIOD_SECONDS = 15;
+    public static final int       detectingIntervalInSeconds = 3;
 
 
     public BinlogDumpServer() {
@@ -52,6 +62,12 @@ public class BinlogDumpServer extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        try {
+            String gtidSet = fetchGtid();
+            context.setGtidSet(new GtidSet(gtidSet));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (checksumType != ChecksumType.NONE) {
             try {
                 confirmSupportOfChecksum(checksumType);
@@ -60,6 +76,7 @@ public class BinlogDumpServer extends Thread {
             }
         }
         context.setChecksumType(checksumType);
+        setHeartBeat();
         try {
             binlogDump();
         } catch (Exception e) {
@@ -68,11 +85,49 @@ public class BinlogDumpServer extends Thread {
 
     }
 
+    public String fetchGtid() throws Exception {
+        MysqlQueryExecutor queryExecutor = getQueryExecutor();
+        ResultSetPacket query = queryExecutor.query("show global variables like 'gtid_purged'");
+        System.out.println(query.toString());
+        if (query.getFieldValues() != null && query.getFieldValues().size() > 0) {
+            return query.getFieldValues().get(1);
+        }
+        return "";
+    }
+
+    public void setHeartBeat() {
+
+        if (timer == null) {
+            timer = new Timer("heartBeat", true);
+        }
+        if (heartBeatTimerTask == null) {
+            heartBeatTimerTask = buildHeartBeatTask();
+            timer.schedule(heartBeatTimerTask, detectingIntervalInSeconds * 1000L, detectingIntervalInSeconds * 1000L);
+
+        }
+    }
+
+    public TimerTask buildHeartBeatTask() {
+        return new TimerTask() {
+            @Override
+            public void run() {
+                if ((System.currentTimeMillis() - lastHeartBeat) / 1000 > MASTER_HEARTBEAT_PERIOD_SECONDS) {
+                    System.out.println("master失去连接");
+                } else {
+                    System.out.println(String.format("{ heartBeart check time 上一次检查时间 %s 本次时间 %s }", lastHeartBeat, System.currentTimeMillis()));
+                }
+            }
+        };
+    }
+
     public void binlogDump() throws Exception {
+        BinlogDumpContext binlogDumpContext = BinlogDumpContext.getBinlogDumpContext();
+        GtidSet gtidSet = binlogDumpContext.getGtidSet();
+        // if (gtidSet != null && gtidSet.getUUIDSets())
         BinlogDumpCommandPacket binlogDumpCommandPacket = new BinlogDumpCommandPacket();
         binlogDumpCommandPacket.setCommand(MySQLPacket.COM_BINLOG_DUMP);
         binlogDumpCommandPacket.setBinlogFileName(fileName);
-        binlogDumpCommandPacket.setBinlogPosition(427);
+        binlogDumpCommandPacket.setBinlogPosition(pos);
         binlogDumpCommandPacket.setPacketId((byte) 0);
         binlogDumpCommandPacket.setBinlogFlags(0);
         binlogDumpCommandPacket.setBinlogFlags(binlogDumpCommandPacket.getBinlogFlags() | BinlogDumpCommandPacket.BINLOG_SEND_ANNOTATE_ROWS_EVENT);
@@ -82,7 +137,6 @@ public class BinlogDumpServer extends Thread {
         startAsc = true;
         while (startAsc) {
             BinaryPacket receive = receive();
-            BinlogDumpContext binlogDumpContext = BinlogDumpContext.getBinlogDumpContext();
             switch (receive.getBody()[0]) {
                 case ErrorPacket.FIELD_COUNT:
                     ErrorPacketException.handleFailure(receive);
@@ -90,7 +144,12 @@ public class BinlogDumpServer extends Thread {
                 case EOFPacket.FIELD_COUNT:
                     return;
                 default:
-                    readEvent(receive);
+                    Event event = readEvent(receive);
+                    EventHeaderV4 headerV4 = (EventHeaderV4)event.getEventHeader();
+                    if ( headerV4 instanceof EventHeaderV4) {
+                        logPosition.setPosition(headerV4.getNextLogPos());
+                    }
+                    System.out.println(logPosition.toString());
                     break;
 
             }
@@ -98,10 +157,13 @@ public class BinlogDumpServer extends Thread {
 
     }
 
-    public void readEvent(BinaryPacket bin) {
+    public Event readEvent(BinaryPacket bin) {
         Event eventData = new Event();
         eventData.read(bin);
         System.out.println(eventData.toString());
+        // 记录一下有数据包的时间
+        lastHeartBeat = System.currentTimeMillis();
+        return eventData;
     }
 
     private void confirmSupportOfChecksum(ChecksumType checksumType) throws Exception {
@@ -111,11 +173,17 @@ public class BinlogDumpServer extends Thread {
     }
 
     public void getFileNameAndPos() {
+        if (logPosition != null) {
+            pos = logPosition.getPosition();
+            fileName = logPosition.getJournalName();
+            return;
+        }
         try {
             ResultSetPacket result = getQueryExecutor().query("show master status");
             fileName = result.getFieldValues().get(0);
             pos = Long.parseLong(result.getFieldValues().get(1));
             System.out.println(String.format("获取到的binlog name 为 %s pos 为 %s", fileName, pos));
+            logPosition = new LogPosition(fileName, pos, 0L);
         } catch (Exception e) {
             e.printStackTrace();
         }

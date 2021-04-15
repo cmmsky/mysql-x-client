@@ -11,9 +11,9 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class StartEventV3Data implements EventData {
 
-    public int binlogVersion;
-    public String mysqlServerVersion;
-    public long timeStamp;
+    private int binlogVersion;
+    private String mysqlServerVersion;
+    private long timeStamp;
 
 
     @Override
@@ -22,5 +22,29 @@ public class StartEventV3Data implements EventData {
         binlogVersion = mm.readUB2();
         mysqlServerVersion = new String(mm.readBytes(50));
         timeStamp = mm.readUB4();
+    }
+
+    public int getBinlogVersion() {
+        return binlogVersion;
+    }
+
+    public void setBinlogVersion(int binlogVersion) {
+        this.binlogVersion = binlogVersion;
+    }
+
+    public String getMysqlServerVersion() {
+        return mysqlServerVersion;
+    }
+
+    public void setMysqlServerVersion(String mysqlServerVersion) {
+        this.mysqlServerVersion = mysqlServerVersion;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

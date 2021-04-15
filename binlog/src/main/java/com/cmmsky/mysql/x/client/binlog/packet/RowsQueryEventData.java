@@ -10,7 +10,7 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class RowsQueryEventData implements EventData {
 
-    public String query;
+    private String query;
 
     @Override
     public void read(byte[] data) {
@@ -25,5 +25,13 @@ public class RowsQueryEventData implements EventData {
         return "RowsQueryEventData{" +
                 "query='" + query + '\'' +
                 '}';
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
     }
 }

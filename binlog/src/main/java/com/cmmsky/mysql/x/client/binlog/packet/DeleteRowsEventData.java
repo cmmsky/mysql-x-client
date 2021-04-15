@@ -18,8 +18,8 @@ import java.util.List;
  */
 public class DeleteRowsEventData extends AbstractRowsEventData implements EventData {
 
-    public long tableId;
-    public BitSet inCludedColumns;
+    private long tableId;
+    private BitSet inCludedColumns;
     private List<Object[]> rows;
 
 
@@ -70,5 +70,29 @@ public class DeleteRowsEventData extends AbstractRowsEventData implements EventD
                 ", inCludedColumns=" + inCludedColumns +
                 ", rows=" + rows +
                 '}';
+    }
+
+    public long getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(long tableId) {
+        this.tableId = tableId;
+    }
+
+    public BitSet getInCludedColumns() {
+        return inCludedColumns;
+    }
+
+    public void setInCludedColumns(BitSet inCludedColumns) {
+        this.inCludedColumns = inCludedColumns;
+    }
+
+    public List<Object[]> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<Object[]> rows) {
+        this.rows = rows;
     }
 }

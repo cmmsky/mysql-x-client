@@ -21,18 +21,18 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class EventHeaderV4 extends EventHeader {
 
-    public long timestamp;
+    private long timestamp;
     // eventType在EventHeaader中
-    public long serverId;
-    public long eventSize;
+    private long serverId;
+    private long eventSize;
 
     // if binlog-version > 1:
-    public long nextLogPos;
-    public int  flags;
+    private long nextLogPos;
+    private int  flags;
 
-    public int checksumAlg;
-    public long crc;
-    public String logFileName;
+    private int checksumAlg;
+    private long crc;
+    private String logFileName;
 
     public void read(MySQLMessage mm) {
         this.timestamp = mm.readUB4() * 1000;
@@ -54,8 +54,72 @@ public class EventHeaderV4 extends EventHeader {
                 ", eventType=" + eventType +
                 ", serverId=" + serverId +
                 ", eventSize=" + eventSize +
-                ", logPos=" + nextLogPos +
+                ", nextLogPos=" + nextLogPos +
                 ", flags=" + flags +
                 '}';
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public long getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(long serverId) {
+        this.serverId = serverId;
+    }
+
+    public long getEventSize() {
+        return eventSize;
+    }
+
+    public void setEventSize(long eventSize) {
+        this.eventSize = eventSize;
+    }
+
+    public long getNextLogPos() {
+        return nextLogPos;
+    }
+
+    public void setNextLogPos(long nextLogPos) {
+        this.nextLogPos = nextLogPos;
+    }
+
+    public int getFlags() {
+        return flags;
+    }
+
+    public void setFlags(int flags) {
+        this.flags = flags;
+    }
+
+    public int getChecksumAlg() {
+        return checksumAlg;
+    }
+
+    public void setChecksumAlg(int checksumAlg) {
+        this.checksumAlg = checksumAlg;
+    }
+
+    public long getCrc() {
+        return crc;
+    }
+
+    public void setCrc(long crc) {
+        this.crc = crc;
+    }
+
+    public String getLogFileName() {
+        return logFileName;
+    }
+
+    public void setLogFileName(String logFileName) {
+        this.logFileName = logFileName;
     }
 }

@@ -17,12 +17,12 @@ import java.util.BitSet;
  */
 public class TableMapEventData implements EventData {
 
-    public long tableId;
-    public String database;
-    public String table;
-    public byte[] columnTypes;
-    public int[] columnMetadata;
-    public BitSet columnNullability;
+    private long tableId;
+    private String database;
+    private String table;
+    private byte[] columnTypes;
+    private int[] columnMetadata;
+    private BitSet columnNullability;
 
 
     @Override

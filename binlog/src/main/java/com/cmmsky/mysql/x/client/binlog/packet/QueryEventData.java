@@ -12,15 +12,15 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class QueryEventData implements EventData {
 
-    public long threadId;
-    public long exectionTime;
-    public byte schemeLength;
-    public int errorCode;
-    public int statusVarsLength;
-    public byte[] statusVars;
-    public String database;
+    private long threadId;
+    private long exectionTime;
+    private byte schemeLength;
+    private int errorCode;
+    private int statusVarsLength;
+    private byte[] statusVars;
+    private String database;
 
-    public String sql;
+    private String sql;
 
 
     @Override
@@ -55,5 +55,67 @@ public class QueryEventData implements EventData {
                 '}';
     }
 
+    public long getThreadId() {
+        return threadId;
+    }
 
+    public void setThreadId(long threadId) {
+        this.threadId = threadId;
+    }
+
+    public long getExectionTime() {
+        return exectionTime;
+    }
+
+    public void setExectionTime(long exectionTime) {
+        this.exectionTime = exectionTime;
+    }
+
+    public byte getSchemeLength() {
+        return schemeLength;
+    }
+
+    public void setSchemeLength(byte schemeLength) {
+        this.schemeLength = schemeLength;
+    }
+
+    public int getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public int getStatusVarsLength() {
+        return statusVarsLength;
+    }
+
+    public void setStatusVarsLength(int statusVarsLength) {
+        this.statusVarsLength = statusVarsLength;
+    }
+
+    public byte[] getStatusVars() {
+        return statusVars;
+    }
+
+    public void setStatusVars(byte[] statusVars) {
+        this.statusVars = statusVars;
+    }
+
+    public String getDatabase() {
+        return database;
+    }
+
+    public void setDatabase(String database) {
+        this.database = database;
+    }
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
 }

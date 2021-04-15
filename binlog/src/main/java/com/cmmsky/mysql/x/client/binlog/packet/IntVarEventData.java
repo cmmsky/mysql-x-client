@@ -10,8 +10,8 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class IntVarEventData implements EventData {
 
-    public byte type;
-    public long value;
+    private byte type;
+    private long value;
 
 
     @Override
@@ -28,5 +28,21 @@ public class IntVarEventData implements EventData {
                 "type=" + type +
                 ", value=" + value +
                 '}';
+    }
+
+    public byte getType() {
+        return type;
+    }
+
+    public void setType(byte type) {
+        this.type = type;
+    }
+
+    public long getValue() {
+        return value;
+    }
+
+    public void setValue(long value) {
+        this.value = value;
     }
 }

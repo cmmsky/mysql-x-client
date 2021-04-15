@@ -12,15 +12,15 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
  */
 public class FormatDescEventData implements EventData {
 
-    public int binlogVersion;
-    public String mysqServerlVersion;
-    public long createTimestamp;
-    public byte eventHeaderLength;
-    public String eventTypeHeaderLengths;
+    private int binlogVersion;
+    private String mysqServerlVersion;
+    private long createTimestamp;
+    private byte eventHeaderLength;
+    private String eventTypeHeaderLengths;
 
     private byte dataLength;
 
-    public ChecksumType checksumType;
+    private ChecksumType checksumType;
 
     @Override
     public String toString() {
@@ -52,5 +52,61 @@ public class FormatDescEventData implements EventData {
             checksumType = ChecksumType.byOrdinal(read);
             this.checksumType = checksumType;
         }
+    }
+
+    public int getBinlogVersion() {
+        return binlogVersion;
+    }
+
+    public void setBinlogVersion(int binlogVersion) {
+        this.binlogVersion = binlogVersion;
+    }
+
+    public String getMysqServerlVersion() {
+        return mysqServerlVersion;
+    }
+
+    public void setMysqServerlVersion(String mysqServerlVersion) {
+        this.mysqServerlVersion = mysqServerlVersion;
+    }
+
+    public long getCreateTimestamp() {
+        return createTimestamp;
+    }
+
+    public void setCreateTimestamp(long createTimestamp) {
+        this.createTimestamp = createTimestamp;
+    }
+
+    public byte getEventHeaderLength() {
+        return eventHeaderLength;
+    }
+
+    public void setEventHeaderLength(byte eventHeaderLength) {
+        this.eventHeaderLength = eventHeaderLength;
+    }
+
+    public String getEventTypeHeaderLengths() {
+        return eventTypeHeaderLengths;
+    }
+
+    public void setEventTypeHeaderLengths(String eventTypeHeaderLengths) {
+        this.eventTypeHeaderLengths = eventTypeHeaderLengths;
+    }
+
+    public byte getDataLength() {
+        return dataLength;
+    }
+
+    public void setDataLength(byte dataLength) {
+        this.dataLength = dataLength;
+    }
+
+    public ChecksumType getChecksumType() {
+        return checksumType;
+    }
+
+    public void setChecksumType(ChecksumType checksumType) {
+        this.checksumType = checksumType;
     }
 }

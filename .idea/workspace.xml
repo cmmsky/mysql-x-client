@@ -83,10 +83,49 @@
       <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/MySQLMessage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/SecurityUtil.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mysql-protocol/src/main/java/com/dfire/datacenter/mysql/protocol/utils/StreamUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/LogPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/request/BinlogDumpGtidCommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/protocol/packets/request/GtidSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quartz-x/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quartz-x/quartz-x-core/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quartz-x/quartz-x-core/src/main/java/com/dfire/datacenter/quartz/x/core/handler/sharding/AbstractJobShardingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/DeleteRowsEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/DeleteRowsEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/EventHeaderV4.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/EventHeaderV4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/FormatDescEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/FormatDescEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/GtidEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/GtidEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/HeartBeatEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/HeartBeatEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/IntVarEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/IntVarEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/QueryEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/QueryEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/RowsQueryEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/RowsQueryEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/StartEventV3Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/StartEventV3Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/TableMapEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/TableMapEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/UpdateRowsEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/UpdateRowsEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/WriteRowsEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/WriteRowsEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/XidEventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/packet/XidEventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/BinlogDumpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/BinlogDumpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/codec/StartEventV3DataDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/codec/StartEventV3DataDecoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/AbstractRowsEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/AbstractRowsEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/DeleteRowsEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/DeleteRowsEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/EventHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/EventHeader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/EventHeaderV4.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/EventHeaderV4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/FormatDescEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/FormatDescEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/GtidEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/GtidEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/IntVarEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/IntVarEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/QueryEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/QueryEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/RotateEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/RotateEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/RowsQueryEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/RowsQueryEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/StartEventV3Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/StartEventV3Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/TableMapEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/TableMapEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/UpdateRowsEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/UpdateRowsEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/WriteRowsEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/WriteRowsEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/XidEventData.class" beforeDir="false" afterPath="$PROJECT_DIR$/binlog/target/classes/com/cmmsky/mysql/x/client/binlog/packet/XidEventData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/StreamUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/cmmsky/mysql/x/client/core/utils/StreamUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +250,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617957495293</updated>
-      <workItem from="1617957499995" duration="55828000" />
+      <workItem from="1617957499995" duration="61387000" />
+      <workItem from="1618450915678" duration="12934000" />
     </task>
     <servers />
   </component>
@@ -219,42 +259,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1155" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1618305402318">
+    <state x="-1155" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1618479952563">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1155" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305402318" />
-    <state width="1877" height="480" key="GridCell.Tab.0.bottom" timestamp="1618384729585">
+    <state x="-1155" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618479952563" />
+    <state width="1877" height="255" key="GridCell.Tab.0.bottom" timestamp="1618479279908">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618384729585" />
-    <state width="1877" height="480" key="GridCell.Tab.0.center" timestamp="1618384729585">
+    <state width="1877" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618479279908" />
+    <state width="1877" height="255" key="GridCell.Tab.0.center" timestamp="1618479279908">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618384729585" />
-    <state width="1877" height="480" key="GridCell.Tab.0.left" timestamp="1618384729584">
+    <state width="1877" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618479279908" />
+    <state width="1877" height="255" key="GridCell.Tab.0.left" timestamp="1618479279908">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618384729584" />
-    <state width="1877" height="480" key="GridCell.Tab.0.right" timestamp="1618384729585">
+    <state width="1877" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618479279908" />
+    <state width="1877" height="255" key="GridCell.Tab.0.right" timestamp="1618479279908">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618384729585" />
-    <state width="1877" height="82" key="GridCell.Tab.1.bottom" timestamp="1618305343444">
+    <state width="1877" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618479279908" />
+    <state width="1877" height="334" key="GridCell.Tab.1.bottom" timestamp="1618477932304">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="82" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
-    <state width="1877" height="82" key="GridCell.Tab.1.center" timestamp="1618305343444">
+    <state width="1877" height="334" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618477932304" />
+    <state width="1877" height="334" key="GridCell.Tab.1.center" timestamp="1618477932304">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="82" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
-    <state width="1877" height="82" key="GridCell.Tab.1.left" timestamp="1618305343444">
+    <state width="1877" height="334" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618477932304" />
+    <state width="1877" height="334" key="GridCell.Tab.1.left" timestamp="1618477932303">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="82" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
-    <state width="1877" height="82" key="GridCell.Tab.1.right" timestamp="1618305343444">
+    <state width="1877" height="334" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618477932303" />
+    <state width="1877" height="334" key="GridCell.Tab.1.right" timestamp="1618477932304">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="82" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618305343444" />
+    <state width="1877" height="334" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618477932304" />
     <state x="-1273" y="295" width="759" height="548" key="find.popup" timestamp="1618384810877">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -263,6 +303,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1586" y="244" key="new project wizard/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618219268096" />
+    <state x="-1326" y="235" width="729" height="678" key="search.everywhere.popup" timestamp="1618393486989">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1326" y="235" width="729" height="678" key="search.everywhere.popup/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1618393486989" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,23 +323,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
-          <line>63</line>
+          <line>80</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
-          <line>161</line>
+          <line>229</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
-          <line>107</line>
+          <line>169</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
-          <line>83</line>
+          <line>138</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
+          <line>182</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/binlog/src/main/java/com/cmmsky/mysql/x/client/binlog/BinlogDumpServer.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
