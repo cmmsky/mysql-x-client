@@ -5,7 +5,7 @@ import com.cmmsky.mysql.x.client.binlog.BinlogDumpContext;
 /**
  * @Author: cmmsky
  * @Date: Created in 15:51 2021/4/13
- * @Description:
+ * @Description: 心跳日志
  * @Modified by:
  */
 public class HeartBeatEventData implements EventData {

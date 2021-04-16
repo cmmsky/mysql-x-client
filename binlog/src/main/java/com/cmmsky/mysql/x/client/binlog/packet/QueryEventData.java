@@ -7,7 +7,7 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
 /**
  * @Author: cmmsky
  * @Date: Created in 16:22 2021/4/6
- * @Description:
+ * @Description: 当binlog格式设置的是statement|mixed且做DB有了更新包括：create，insert，update，delete等；。
  * @Modified by:
  */
 public class QueryEventData implements EventData {

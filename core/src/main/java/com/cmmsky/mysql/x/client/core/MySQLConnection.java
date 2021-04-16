@@ -1,8 +1,11 @@
 package com.cmmsky.mysql.x.client.core;
 
+import com.cmmsky.mysql.x.client.core.common.AbstractBaseLifeCycle;
 import com.cmmsky.mysql.x.client.core.executor.MysqlQueryExecutor;
 import com.cmmsky.mysql.x.client.core.executor.MysqlUpdateExecutor;
 import com.cmmsky.mysql.x.client.core.protocol.socket.SocketChannel;
+import com.cmmsky.mysql.x.client.core.utils.LifeCycleException;
+import com.cmmsky.mysql.x.client.core.utils.XException;
 import sun.misc.LRUCache;
 
 import java.lang.reflect.Constructor;
@@ -14,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
  * @Description:
  * @Modified by:
  */
-public class MySQLConnection {
+public class MySQLConnection extends AbstractBaseLifeCycle {
 
     private SocketChannel channel;
     private Long threadId;
@@ -26,10 +29,9 @@ public class MySQLConnection {
     public MySQLConnection(SocketChannel channel, Long threadId) {
         this.channel = channel;
         this.threadId = threadId;
-
     }
 
-    public MysqlUpdateExecutor getUpdateExecutor() throws Exception {
+    public MysqlUpdateExecutor getUpdateExecutor() {
         Class<?> aClass = null;
         try {
             aClass = Class.forName(MysqlUpdateExecutor.class.getName());
@@ -37,14 +39,8 @@ public class MySQLConnection {
             constructor.setAccessible(true);
             Object o = constructor.newInstance(this);
             return (MysqlUpdateExecutor) o;
-        } catch (ClassNotFoundException | NoSuchMethodException e) {
-            throw new Exception(e.getMessage());
-        } catch (IllegalAccessException e) {
-            throw new Exception(e.getMessage());
-        } catch (InstantiationException e) {
-            throw new Exception(e.getMessage());
-        } catch (InvocationTargetException e) {
-            throw new Exception(e.getMessage());
+        } catch (Exception e) {
+            throw new XException(String.format("获取更新执行器失败 %s", e.getMessage()));
         }
         // Object obj = aClass.newInstance();
 
@@ -59,14 +55,8 @@ public class MySQLConnection {
             constructor.setAccessible(true);
             Object o = constructor.newInstance(this);
             return (MysqlQueryExecutor) o;
-        } catch (ClassNotFoundException | NoSuchMethodException e) {
-            throw new Exception(e.getMessage());
-        } catch (IllegalAccessException e) {
-            throw new Exception(e.getMessage());
-        } catch (InstantiationException e) {
-            throw new Exception(e.getMessage());
-        } catch (InvocationTargetException e) {
-            throw new Exception(e.getMessage());
+        } catch (Exception e) {
+            throw new XException(String.format("获取查询执行器失败 %s", e.getMessage()));
         }
     }
 
@@ -78,12 +68,28 @@ public class MySQLConnection {
         this.channel = channel;
     }
 
-    public void close() {
-        // CommandPacket commandPacket = new CommandPacket(MySQLPacket.COM_PROCESS_KILL, threadId.toString().getBytes());
+
+    @Override
+    protected void doStart() {
+        if (channel.isConnected()) {
+            System.out.println("connection 启动成功");
+        } else {
+            throw new LifeCycleException("channel not open");
+        }
+    }
+
+    @Override
+    protected void doStop() {
         if (channel != null) {
             channel.close();
         }
     }
 
+    public Long getThreadId() {
+        return threadId;
+    }
 
+    public void setThreadId(Long threadId) {
+        this.threadId = threadId;
+    }
 }

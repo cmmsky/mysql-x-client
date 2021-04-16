@@ -3,6 +3,8 @@ package com.cmmsky.mysql.x.client.binlog;
 import com.cmmsky.mysql.x.client.binlog.packet.Event;
 import com.cmmsky.mysql.x.client.binlog.packet.EventHeader;
 import com.cmmsky.mysql.x.client.binlog.packet.EventHeaderV4;
+import com.cmmsky.mysql.x.client.core.common.AbstractBaseLifeCycle;
+import com.cmmsky.mysql.x.client.core.common.BaseLifeCycle;
 import com.cmmsky.mysql.x.client.core.protocol.packets.request.GtidSet;
 import com.cmmsky.mysql.x.client.core.MySQLDataSource;
 import com.cmmsky.mysql.x.client.core.executor.MysqlQueryExecutor;
@@ -22,40 +24,48 @@ import java.util.concurrent.TimeUnit;
  * @Description:
  * @Modified by:
  */
-public class BinlogDumpServer extends Thread {
+public class BinlogDumpServer extends AbstractBaseLifeCycle {
 
-
+    // binlog file name
     private String fileName;
+    // binlog 的位置
     private long pos;
     private MySQLDataSource dataSource;
+    // binlog同步上下文
     private BinlogDumpContext context;
     private int checksumLength;
+    // 心跳检测定时任务
     private TimerTask heartBeatTimerTask;
     private Timer timer;
     private long lastHeartBeat = 0;
     private LogPosition logPosition;
-
-    private boolean startAsc = false;
 
     public static final int       MASTER_HEARTBEAT_PERIOD_SECONDS = 15;
     public static final int       detectingIntervalInSeconds = 3;
 
 
     public BinlogDumpServer() {
+        // 初始化数据源
         dataSource = new MySQLDataSource("127.0.0.1", 3306, "root", "123456");
         registerListener();
+        context = new BinlogDumpContext();
 
     }
 
 
     @Override
-    public void run() {
-        context = new BinlogDumpContext();
+    protected void doStart() {
+        dataSource.start();
+
         BinlogDumpContext.setBinlogDumpContext(context);
+        // 获取日志名呵position
         if (fileName == null) {
             getFileNameAndPos();
         }
+        // 开始dump前做一些session配置的更新
         updateSettings();
+        // mysql5.6之后，支持在binlog对象中增加checksum信息，比如CRC32协议. 其原理主要是在原先binlog的末尾新增了4个byte，写入一个crc32的校验值.
+        // mysql5.6.6之后默认就会开启checksum.
         ChecksumType checksumType = null;
         try {
             checksumType = fetchBinlogChecksum();
@@ -63,6 +73,7 @@ public class BinlogDumpServer extends Thread {
             e.printStackTrace();
         }
         try {
+            // 功能后面补充
             String gtidSet = fetchGtid();
             context.setGtidSet(new GtidSet(gtidSet));
         } catch (Exception e) {
@@ -76,13 +87,14 @@ public class BinlogDumpServer extends Thread {
             }
         }
         context.setChecksumType(checksumType);
+        // 添加心跳检测
         setHeartBeat();
         try {
+            // 开始binlog同步
             binlogDump();
         } catch (Exception e) {
             System.out.println(String.format("binlog 日志同步发生异常 %s", e.getMessage()));
         }
-
     }
 
     public String fetchGtid() throws Exception {
@@ -134,8 +146,7 @@ public class BinlogDumpServer extends Thread {
         // binlogDumpCommandPacket.binlogFlags |= binlogDumpCommandPacket.BINLOG_SEND_ANNOTATE_ROWS_EVENT;
         binlogDumpCommandPacket.setSlaveServerId(4);
         binlogDumpCommandPacket.write(dataSource.getConnection().getChannel());
-        startAsc = true;
-        while (startAsc) {
+        while (running) {
             BinaryPacket receive = receive();
             switch (receive.getBody()[0]) {
                 case ErrorPacket.FIELD_COUNT:
@@ -183,7 +194,7 @@ public class BinlogDumpServer extends Thread {
             fileName = result.getFieldValues().get(0);
             pos = Long.parseLong(result.getFieldValues().get(1));
             System.out.println(String.format("获取到的binlog name 为 %s pos 为 %s", fileName, pos));
-            logPosition = new LogPosition(fileName, pos, 0L);
+            logPosition = new LogPosition(fileName, pos, dataSource.getConnection().getThreadId());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -253,14 +264,28 @@ public class BinlogDumpServer extends Thread {
         return dataSource.getConnection().getQueryExecutor();
     }
 
+    /**
+     * 监听jvm关闭时执行的一些操作，实现优雅停机
+     */
     public void registerListener() {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println("shutdown ");
-                startAsc = false;
+                stop();
             }
         }));
     }
 
+
+
+    @Override
+    protected void doStop() {
+        lastHeartBeat = 0L;
+        if (timer != null) {
+            timer.cancel();
+        }
+        heartBeatTimerTask = null;
+        dataSource.stop();
+    }
 }

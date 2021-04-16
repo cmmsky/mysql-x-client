@@ -7,7 +7,7 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
 /**
  * @Author: cmmsky
  * @Date: Created in 15:17 2021/4/2
- * @Description:
+ * @Description: 描述事件，被写在每个binlog文件的开始位置，用在MySQL5.0以后的版本中，代替了START_EVENT_V3
  * @Modified by:
  */
 public class FormatDescEventData implements EventData {

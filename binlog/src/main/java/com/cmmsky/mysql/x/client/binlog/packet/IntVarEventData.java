@@ -5,7 +5,7 @@ import com.cmmsky.mysql.x.client.core.protocol.packets.MySQLMessage;
 /**
  * @Author: cmmsky
  * @Date: Created in 14:48 2021/4/9
- * @Description:
+ * @Description: 当sql语句中使用了AUTO_INCREMENT的字段或者LAST_INSERT_ID()函数；此事件没有被用在binlog_format为ROW模式的情况下。
  * @Modified by:
  */
 public class IntVarEventData implements EventData {

@@ -1,14 +1,12 @@
 package com.cmmsky.mysql.x.client.core;
 
+import com.cmmsky.mysql.x.client.core.common.AbstractBaseLifeCycle;
 import com.cmmsky.mysql.x.client.core.protocol.packets.*;
 import com.cmmsky.mysql.x.client.core.protocol.packets.request.Auth323Packet;
 import com.cmmsky.mysql.x.client.core.protocol.packets.request.AuthPacket;
 import com.cmmsky.mysql.x.client.core.protocol.socket.SocketChannel;
 import com.cmmsky.mysql.x.client.core.protocol.socket.SocketChannelPool;
-import com.cmmsky.mysql.x.client.core.utils.Capabilities;
-import com.cmmsky.mysql.x.client.core.utils.ErrorPacketException;
-import com.cmmsky.mysql.x.client.core.utils.SecurityUtil;
-import com.cmmsky.mysql.x.client.core.utils.UnknownPacketException;
+import com.cmmsky.mysql.x.client.core.utils.*;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -20,7 +18,7 @@ import java.security.NoSuchAlgorithmException;
  * @Description:
  * @Modified by:
  */
-public class MySQLDataSource {
+public class MySQLDataSource extends AbstractBaseLifeCycle {
 
     private InetSocketAddress address;
     private String username;
@@ -41,8 +39,7 @@ public class MySQLDataSource {
         if (connection != null)
             return connection;
         SocketChannel channel = SocketChannelPool.open(address);
-        long threadId = doAuthenticate(channel);
-        connection = new MySQLConnection(channel, threadId);
+        connection = new MySQLConnection(channel, doAuthenticate(channel));
         return  connection;
     }
 
@@ -56,7 +53,7 @@ public class MySQLDataSource {
         try {
             authResp = auth411(hsp, channel);
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            throw new XException(String.format("权限验证发生异常 %s", e.getMessage()));
         }
         System.out.println(String.format("线程ID %s", hsp.getThreadId()));
 
@@ -158,5 +155,20 @@ public class MySQLDataSource {
     }
 
 
+    @Override
+    protected void doStart() {
+        if (connection == null) {
+            try {
+                this.getConnection();
+            } catch (IOException e) {
+                throw new XException(String.format("连接数据库发生异常 %s", e.getMessage()));
+            }
+        }
+        connection.start();
+    }
 
+    @Override
+    protected void doStop() {
+        connection.stop();
+    }
 }

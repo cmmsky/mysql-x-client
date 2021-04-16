@@ -12,9 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 以上三个事件都被用在binlog_format为ROW模式下，分别对应inset，update和delete操作；
  * @Author: cmmsky
  * @Date: Created in 14:09 2021/4/9
- * @Description:
+ * @Description: 当binlog格式设置的是Row|mixed且有insert操作时候，有此事件发生。
  * @Modified by:
  */
 public class WriteRowsEventData extends AbstractRowsEventData implements EventData {

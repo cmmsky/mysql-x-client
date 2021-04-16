@@ -17,7 +17,7 @@ public class BioSocketChannel implements SocketChannel {
     private Socket socket;
     private InputStream in;
     private OutputStream out;
-    private boolean isConnected;
+    private volatile boolean isConnected;
 
 
     public BioSocketChannel(Socket socket) throws IOException {
@@ -25,6 +25,9 @@ public class BioSocketChannel implements SocketChannel {
         this.in = new BufferedInputStream(socket.getInputStream(), INPUT_STREAM_BUFFER);
         // this.out = new BufferedOutputStream(socket.getOutputStream(), OUTPUT_STREAM_BUFFER);
         this.out = socket.getOutputStream();
+        if (socket != null) {
+            isConnected = socket.isConnected();
+        }
     }
 
 
@@ -78,6 +81,16 @@ public class BioSocketChannel implements SocketChannel {
                 e.printStackTrace();
             }
         }
+
+        if (socket != null) {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        this.isConnected = false;
 
 
     }

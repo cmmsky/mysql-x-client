@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * @Author: cmmsky
  * @Date: Created in 15:56 2021/4/9
- * @Description:
+ * @Description: 当binlog格式设置的是ROW | mixed且row更新的时候会发生此事件
  * @Modified by:
  */
 public class UpdateRowsEventData extends AbstractRowsEventData implements EventData {

@@ -12,7 +12,7 @@ import java.util.BitSet;
 /**
  * @Author: cmmsky
  * @Date: Created in 10:35 2021/4/9
- * @Description:
+ * @Description: 用在binlog_format为ROW模式下，将表的定义映射到一个数字，在行操作事件之前记录（包括：WRITE_ROWS_EVENT，UPDATE_ROWS_EVENT，DELETE_ROWS_EVENT）；
  * @Modified by:
  */
 public class TableMapEventData implements EventData {

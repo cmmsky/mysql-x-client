@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @Author: cmmsky
  * @Date: Created in 15:58 2021/4/12
- * @Description:
+ * @Description: 查询执行器
  * @Modified by:
  */
 public class MysqlQueryExecutor extends MysqlExecutor {
@@ -21,7 +21,10 @@ public class MysqlQueryExecutor extends MysqlExecutor {
         super(conn);
     }
 
-    public ResultSetPacket query(String cmd) throws IOException {
+    public ResultSetPacket query(String cmd) throws Exception {
+        if (!connection.isStart()) {
+            throw new Exception("connection not open");
+        }
         CommandPacket commandPacket = new CommandPacket();
         commandPacket.setCommand(MySQLPacket.COM_QUERY);
         commandPacket.setArg(cmd.getBytes());
